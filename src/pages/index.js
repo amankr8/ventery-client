@@ -1,23 +1,33 @@
-import { Heading, Flex, Container, Text, Box } from '@chakra-ui/react'
+import { Heading, Flex, Container, Text, Box, SimpleGrid, Divider } from '@chakra-ui/react'
 import Card from '../components/Card'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
     <>
-      <Container maxW='container.lg'>
+      <Container maxW='container.xl'>
         <Navbar />
         <Flex justifyContent='center'>
           <Box py={8}>
-            <Heading as='h4'>India First Online Community Marketplace</Heading>
+            <Heading as='h4'>India's First Community e-Marketplace</Heading>
           </Box>
         </Flex>
-        <Box borderTop='1px' align='center'>
-          <Text py={4} fontSize='2xl'>Recent Listings</Text>
+        <Box align='center'>
+          <Text mb={4} fontSize='2xl'>Recent Listings</Text>
+          <Divider mb={4} />
         </Box>
         <Container maxW='container.lg'>
-          <Card />
+          <SimpleGrid columns={3} spacing={4}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </SimpleGrid>
         </Container>
+        <Footer />
       </Container>
     </>
   )
