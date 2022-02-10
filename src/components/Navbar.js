@@ -1,24 +1,22 @@
-import { Flex, Container, HStack, Link, Button } from '@chakra-ui/react'
+import { Flex, Stack, Link, Box } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 const Navbar = () => (
-  <HStack justifyContent='space-between'>
-    <NextLink href='/' passHref>
-      <Link>VENTERY</Link>
-    </NextLink>
-    <Flex>
-      <NextLink href='/login' passHref>
-        <Button colorScheme='teal' variant='ghost'>
-          Login
-        </Button>
+  <Box p={4} borderBottom='1px'>
+    <Stack direction='row' justifyContent='space-between'>
+      <NextLink href='/' passHref>
+        <Link>VENTERY</Link>
       </NextLink>
-      <NextLink href='/login' passHref>
-        <Button colorScheme='teal' variant='solid'>
-          Signup
-        </Button>
-      </NextLink>
-    </Flex>
-  </HStack>
+      <Flex>
+        <NextLink href='/login' passHref>
+          <Link px={2}>Login</Link>
+        </NextLink>
+        <NextLink href='/login' passHref>
+          <Link px={2}>Signup</Link>
+        </NextLink>
+      </Flex>
+    </Stack>
+  </Box>
 );
 
 export default Navbar;
